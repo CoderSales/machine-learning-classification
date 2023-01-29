@@ -63,7 +63,8 @@ source .venv/bin/activate
     - in bash
 source .venv/Scripts/activate
     - on Windows
-/workspace/jupyter-6/.venv/bin/python -m pip install --upgrade pip
+    - on VSCode Windows bash
+/workspace/machine-learning-classification/.venv/bin/python -m pip install --upgrade pip
     - in GitPod
 python3 -m pip install --upgrade pip
     - on Windows

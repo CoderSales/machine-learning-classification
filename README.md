@@ -96,7 +96,7 @@ pip freeze > requirements.txt
 pip install -r requirements.txt
 
 ## Add required files
-auto-mpg.csv
+pima-indians-diabetes.csv
 ## Extensions
 Extension: Excel Viewer
     - for  viewing csv files in VSCode

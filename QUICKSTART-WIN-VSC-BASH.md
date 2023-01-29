@@ -25,3 +25,6 @@ use Python version in ./.venv/bin/python
 pip freeze > requirements.txt
 
 pip install -r requirements.txt
+
+## Add required files
+pima-indians-diabetes.csv

@@ -12,3 +12,16 @@ pip install statsmodels
 pip install -U scikit-learn
 pip install ipykernel
 pip install nb-black
+
+Ctrl Shift P
+Create New Jupyter Notebook
+Save and name notebook
+Paste in necessary code
+
+Ctrl Shift P
+Python: Select Interpreter
+use Python version in ./.venv/bin/python
+
+pip freeze > requirements.txt
+
+pip install -r requirements.txt

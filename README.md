@@ -105,6 +105,10 @@ Extension: Excel Viewer
     - for  viewing csv files in VSCode
 
 ## Debug
+
+### jupyter cannot find modules
+
+- [install modules from jupyter notebook](https://discourse.jupyter.org/t/python-in-terminal-finds-module-jupyter-notebook-does-not/2262/7)
 ### prelim
 per above
 Python:Select Interpreter

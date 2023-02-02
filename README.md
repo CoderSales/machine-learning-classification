@@ -69,6 +69,9 @@ source .venv/Scripts/activate
 python3 -m pip install --upgrade pip
     - on Windows
 
+.venv/Scripts/python.exe -m pip install --upgrade pip
+    - in .venv
+
 pip install --upgrade pip
 pip install jupyter notebook
 pip install matplotlib

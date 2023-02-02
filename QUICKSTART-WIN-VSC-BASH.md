@@ -1,6 +1,7 @@
 python3 -m venv .venv
 source .venv/Scripts/activate
 python3 -m pip install --upgrade pip
+.venv/Scripts/python.exe -m pip install --upgrade pip
 pip install --upgrade pip
 pip install jupyter notebook
 pip install matplotlib

@@ -138,6 +138,7 @@ Create New Jupyter Notebook
 # Files
 ## summary
 - summary-income.md
+    - high level summary of steps in income.ipynb notebook
 # References
 ## previous repositories
 jupyter-test

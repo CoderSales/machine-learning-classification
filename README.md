@@ -10,7 +10,7 @@ check how to remove null values from dataframe
 pandas 
 .iloc() - locate by row, col indices
 .loc() - locate by row index and col NAME
-
+ 
 ## Data Cleaning
 ### 2.13 Lecture
 df.drop('Column name', axis=1)
@@ -271,3 +271,6 @@ command was slow at first  but self-resolved
 
 ## print separate with no spaces
 - [Print without space in python 3](https://stackoverflow.com/questions/12700558/print-without-space-in-python-3)
+# References Part5 / (other, VSCODE workflow window views)
+## VSCODE workflow window views
+- [VSCODE workflow window views](https://stackoverflow.com/questions/43362133/visual-studio-code-open-tab-in-new-window)

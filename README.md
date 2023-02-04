@@ -3,15 +3,16 @@
 # primary source for this README: jupyter-6-Supervised-Learning
 Repository for running jupyter notebooks and keeping relevant files in one place
 
-# notes made for previous plan to remove null values
+# notes
+## notes made for previous plan to remove null values
 check how to remove null values from dataframe
 
-## notes
+### notes
 pandas 
 .iloc() - locate by row, col indices
 .loc() - locate by row index and col NAME
  
-## Data Cleaning
+### Data Cleaning
 ### 2.13 Lecture
 df.drop('Column name', axis=1)
     - where axies = 0 for rows, 1 for columns
@@ -133,6 +134,10 @@ pandas not found
 create new jupyter notebook using 
 Ctrl Shift P
 Create New Jupyter Notebook
+
+# Files
+## summary
+- summary-income.md
 # References
 ## previous repositories
 jupyter-test

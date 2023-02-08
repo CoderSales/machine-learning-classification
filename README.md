@@ -235,6 +235,9 @@ command was slow at first  but self-resolved
 ### NumPy
 ### Pandas
 ### matplotlib
+- search string: [plotting fig from subplot returns Figure(1500x1000)](https://www.google.com/search?q=plotting+fig+from+subplot+returns+Figure(1500x1000)&oq=plotting+fig+from+subplot+returns+Figure(1500x1000)&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQABiiBDIHCAIQABiiBDIHCAMQABiiBDIHCAQQABiiBDIHCAUQABiiBNIBCTEyMzgzajFqN6gCALACAA&sourceid=chrome&ie=UTF-8)
+- [fig, ax = plt.subplots()](https://stackoverflow.com/questions/34162443/why-do-many-examples-use-fig-ax-plt-subplots-in-matplotlib-pyplot-python)
+- matplotlib docs [fig, ax = plt.subplots()](https://matplotlib.org/stable/plot_types/basic/plot.html)
 ### scipy
 ### scipy.stats
 ### statsmodels

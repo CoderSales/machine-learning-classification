@@ -297,6 +297,10 @@ command was slow at first  but self-resolved
 
 ### print separate with no spaces
 - [Print without space in python 3](https://stackoverflow.com/questions/12700558/print-without-space-in-python-3)
+
+### function
+- [anatomy of a function in python](https://www.google.com/search?q=anatomy+of+a+function+in+python&oq=anatomy+of+a+function+in++python&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQABiiBDIHCAIQABiiBDIHCAMQABiiBDIJCAQQABgeGKIE0gEJMTQ1MjJqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8)
+- [Functions](https://geo-python.github.io/2017/lessons/L4/functions.html#:~:text=Anatomy%20of%20a%20function&text=The%20function%20definition%20opens%20with,indented%20below%20the%20definition%20line.)
 ## ML
 ### Linear Regression
 

@@ -238,6 +238,12 @@ command was slow at first  but self-resolved
 - search string: [plotting fig from subplot returns Figure(1500x1000)](https://www.google.com/search?q=plotting+fig+from+subplot+returns+Figure(1500x1000)&oq=plotting+fig+from+subplot+returns+Figure(1500x1000)&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQABiiBDIHCAIQABiiBDIHCAMQABiiBDIHCAQQABiiBDIHCAUQABiiBNIBCTEyMzgzajFqN6gCALACAA&sourceid=chrome&ie=UTF-8)
 - [fig, ax = plt.subplots()](https://stackoverflow.com/questions/34162443/why-do-many-examples-use-fig-ax-plt-subplots-in-matplotlib-pyplot-python)
 - matplotlib docs [fig, ax = plt.subplots()](https://matplotlib.org/stable/plot_types/basic/plot.html)
+#### subplots
+##### colors
+- search string: [fig.patch.set_facecolor('xkcd:blue')](https://www.google.com/search?q=fig.patch.set_facecolor(%27xkcd%3Ablue%27)&oq=fig.patch.set_facecolor(%27xkcd%3Ablue%27)&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBBzU3NGowajeoAgCwAgA&sourceid=chrome&ie=UTF-8)
+- [xkcd.com/color/rgb/](https://xkcd.com/color/rgb/)
+- search string: [fig, axs = plt.subplots(2, 2)](https://www.google.com/search?q=fig%2C+axs+%3D+plt.subplots(2%2C+2)&oq=fig%2C+axs+%3D+plt.subplots(2%2C+2)&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQABiABDIICAIQABgWGB4yBwgDEAAYhgPSAQc4MjRqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8)
+- [Creating multiple subplots using plt.subplots >> Stacking subplots in two directions](https://matplotlib.org/stable/gallery/subplots_axes_and_figures/subplots_demo.html)
 ### scipy
 ### scipy.stats
 ### statsmodels

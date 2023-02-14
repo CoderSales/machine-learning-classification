@@ -1,7 +1,7 @@
 import os
 
 def activate () {
-  . ../.env/bin/activate
+  . .venv/Scripts/activate
 }
 
 

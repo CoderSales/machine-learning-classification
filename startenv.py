@@ -43,17 +43,19 @@ modules_list = [
 
 # part a:
 # add checker
-not_installed=[] # to be populated
 
-for package in packages:
-    # do some or nothing    
-    if package <how to check if installed>: # if package is installed next
-        pass
-    # pass out non-installed elements
-    else:
-        not_installed.append(package) # 1. add it to the list
+# # TODO: uncomment and code:
+# not_installed=[] # to be populated
+
+# for package in packages:
+#     # do some or nothing
+#     if package <how to check if installed>: # if package is installed next
+#         pass
+#     # pass out non-installed elements
+#     else:
+#         not_installed.append(package) # 1. add it to the list
+# end of TODO
 
 # 2. Install not_installed
 
 # 3. concatenate prepend as prefix -U to scikit-learn
-

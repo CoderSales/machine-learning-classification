@@ -1,10 +1,10 @@
-os.system("pip install notebook")
-os.system("pip install matplotlib")
-os.system("pip install pandas")
-os.system("pip install seaborn")
-os.system("pip install numpy")
-os.system("pip install scipy")
-os.system("pip install statsmodels")
-os.system("pip install -U scikit-learn")
-os.system("pip install ipykernel")
-os.system("pip install nb-black")
+pip install notebook
+pip install matplotlib
+pip install pandas
+pip install seaborn
+pip install numpy
+pip install scipy
+pip install statsmodels
+pip install -U scikit-learn
+pip install ipykernel
+pip install nb-black

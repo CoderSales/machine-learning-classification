@@ -1,6 +1,9 @@
 # IncomeGroupClassification_CaseStudy_DSBA_V2-v3-reduce.ipynb
 # .ipynb
 
+startenv2.py
+bash_activate2.sh
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

@@ -1,5 +1,10 @@
 import os
 
+# part b:
+os.system(
+    ". .venv/Scripts/activate && pip install notebook && pip install matplotlib && pip install pandas && pip install seaborn && pip install numpy && pip install scipy && pip install statsmodels && pip install -U scikit-learn && pip install ipykernel && pip install nb-black"
+)
+
 # part z:
 # modules_list to pass modules
 modules_list = [
@@ -18,17 +23,17 @@ modules_list = [
 
 # part a:
 # add checker
-non_installed=[]
+not_installed=[] # to be populated
+
 for package in packages:
-    
-    if
-    
+    # do some or nothing    
+    if package <how to check if installed>: # if package is installed next
+        pass
     # pass out non-installed elements
     else:
+        not_installed.append(package) # 1. add it to the list
 
+# 2. Install not_installed
 
-# part b:
-os.system(
-    ". .venv/Scripts/activate && pip install notebook && pip install matplotlib && pip install pandas && pip install seaborn && pip install numpy && pip install scipy && pip install statsmodels && pip install -U scikit-learn && pip install ipykernel && pip install nb-black"
-)
+# 3. concatenate prepend as prefix -U to scikit-learn
 

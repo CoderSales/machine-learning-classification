@@ -20,6 +20,15 @@ modules_list = [
     "nb-black",
 ]
 
+# part z a:
+# look through modules_list
+# after check
+# check if scikit-learn is present
+# if doing this way
+# delete first 3 characters
+# or do nothing
+# if listed post check without
+# add 1st 3 characters
 
 # part a:
 # add checker

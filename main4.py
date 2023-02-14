@@ -1,5 +1,8 @@
 import subprocess
 
-subprocess.run("start-env.py", check=True)
+import start-env
+
+
+# subprocess.run("python.exe", "start-env.py", check=True)
 
 subprocess.run("script.sh", check=True)

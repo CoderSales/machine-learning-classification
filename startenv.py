@@ -4,6 +4,7 @@ def activate () {
   . .venv/Scripts/activate
 }
 
+activate
 
 # part b:
 os.system(

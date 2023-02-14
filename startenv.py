@@ -1,10 +1,15 @@
 import os
 
-def activate () {
-  . .venv/Scripts/activate
-}
+import subprocess
 
-activate
+subprocess.call(["sh", "bash_activate.sh"])
+
+
+# def activate () {
+#   . .venv/Scripts/activate
+# }
+
+# activate
 
 # part b:
 os.system(

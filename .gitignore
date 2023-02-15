@@ -3,6 +3,7 @@
 
 startenv2.py
 bash_activate2.sh
+startenv.sh
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

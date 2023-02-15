@@ -8,6 +8,10 @@ Updates from
 
 # ML-logistic-regression-notes
 - [CoderSales/ML-logistic-regression-notes](https://github.com/CoderSales/ML-logistic-regression-notes/blob/main/README.md)
+
+# All content below this point from documentation repository:
+- [CoderSales/documentation](https://github.com/CoderSales/documentation)
+
 # documentation
 documentation for different repositories
 

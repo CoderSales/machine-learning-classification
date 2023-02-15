@@ -1,5 +1,7 @@
 import subprocess
 
+subprocess.call(["sh", "script.sh"])
+
 import startenv2
 
 

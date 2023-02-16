@@ -96,11 +96,20 @@ print("\nuninstalled modules are:", uninstalled_list)
 # os.system("pip install ipykernel")
 # os.system("pip install nb-black")
 
+newly_installed = []
 
-# def installer():
+
+def installer(uninstalled_list):
+    for name in uninstalled_list:
+        if name == "scikit-learn":
+            name2 = "-U " + name
+        os.system("pip install {}".format(name2))
+        print(name, "module has been installed")
+        newly_installed.append(name)
+    print(newly_installed, "modules have just been installed")
 
 
-# installer()
+installer(uninstalled_list)
 
 
 # def importer():

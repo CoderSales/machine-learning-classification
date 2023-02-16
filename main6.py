@@ -84,51 +84,6 @@ def loop_formatted_packages(unchecked_formatted_list, uninstalled_list):
 uninstalled_list = loop_formatted_packages(unchecked_formatted_list, uninstalled_list)
 
 print("\nuninstalled modules are:", uninstalled_list)
-# def instance_of_package():
-#     return sort_output
-
-
-# uninstalled_list.append(post_sort_output)
-
-# now do something with string in module from sort_output
-# append
-# skip all the way to step 3
-
-
-# step 1:
-# sort if scikit-learn string
-# sort_output
-
-# step 1.1:
-# if '-U scikit-learn' string:
-# (calls stringifier)
-
-# here
-
-# step 1.3:
-# define string_modifier_function()
-# strip first 3 characters
-#
-
-
-# step 1.2:
-# call another function
-
-#
-
-# step 2:
-# sort if installed
-# if not return output / string
-
-# step 3:
-# append step:
-# uninstalled_list.append(sort_output)
-
-
-# step 4:
-# install
-
-# install step:
 
 # os.system("pip install notebook")
 # os.system("pip install matplotlib")

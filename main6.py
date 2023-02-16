@@ -110,9 +110,3 @@ def installer(uninstalled_list):
 
 
 installer(uninstalled_list)
-
-
-# def importer():
-
-
-# importer()

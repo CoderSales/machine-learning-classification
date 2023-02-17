@@ -1,7 +1,10 @@
 import importlib.util
 import sys
 import os
+import subprocess
 
+# subprocess.run("chmod +x script2.sh")
+# os.chmod("x", "script2.sh")
 
 modules_list = [
     "notebook",

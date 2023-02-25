@@ -42,6 +42,10 @@ def installer():
         "sklearn.metrics.precision_recall_curve",
         "sklearn.metrics.roc_curve",
         "sklearn.metrics.make_scorer",
+        "sklearn.metrics",  # new
+        "from sklearn.ensemble.BaggingClassifier",  # new
+        "RandomForestClassifier",  # new
+        "sklearn.linear_model.LogisticRegression",  # new
     ]
     uninstalled_list = []
     modules_list_modified = []

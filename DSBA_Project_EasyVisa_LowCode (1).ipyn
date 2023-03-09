@@ -2,24 +2,24 @@
   "cells": [
     {
       "cell_type": "markdown",
-      "source": [
-        "## EasyVisa Project\n",
-        "***Marks: 60***"
-      ],
+      "id": "5i1Du122jTeM",
       "metadata": {
         "id": "5i1Du122jTeM"
       },
-      "id": "5i1Du122jTeM"
+      "source": [
+        "## EasyVisa Project\n",
+        "***Marks: 60***"
+      ]
     },
     {
       "cell_type": "markdown",
-      "source": [
-        "## Problem Statement"
-      ],
+      "id": "2xUfZBo9JM9e",
       "metadata": {
         "id": "2xUfZBo9JM9e"
       },
-      "id": "2xUfZBo9JM9e"
+      "source": [
+        "## Problem Statement"
+      ]
     },
     {
       "cell_type": "markdown",
@@ -81,6 +81,262 @@
       ]
     },
     {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "99d270fd",
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "import importlib.util\n",
+        "import sys\n",
+        "import os\n",
+        "import subprocess\n",
+        "\n",
+        "\n",
+        "def installer():\n",
+        "    modules_list = [\n",
+        "        \"notebook\",\n",
+        "        \"matplotlib\",\n",
+        "        \"pandas\",\n",
+        "        \"seaborn\",\n",
+        "        \"numpy\",\n",
+        "        \"scipy\",\n",
+        "        \"statsmodels\",\n",
+        "        \"-U scikit-learn\",\n",
+        "        \"ipykernel\",\n",
+        "        \"nb-black\",\n",
+        "        \"importlib.util\",\n",
+        "        \"sys\",\n",
+        "        \"os\",\n",
+        "        \"importlib.util\",\n",
+        "        \"subprocess\",\n",
+        "        \"warnings\",\n",
+        "        \"statsmodels.tools.sm_exceptions\",\n",
+        "        \"matplotlib.pyplot\",\n",
+        "        \"sklearn.model_selection.train_test_split\",\n",
+        "        \"statsmodels.stats.api\",\n",
+        "        \"statsmodels.stats.outliers_influence\",\n",
+        "        \"statsmodels.api\",\n",
+        "        \"statsmodels.tools.tools\",\n",
+        "        \"sklearn.tree.DecisionTreeClassifier\",\n",
+        "        \"sklearn.tree\",\n",
+        "        \"sklearn.model_selection.GridSearchCV\",\n",
+        "        \"sklearn.metrics.f1_score\",\n",
+        "        \"sklearn.metrics.accuracy_score\",\n",
+        "        \"sklearn.metrics.recall_score\",\n",
+        "        \"sklearn.metrics.precision_score\",\n",
+        "        \"sklearn.metrics.confusion_matrix\",\n",
+        "        \"sklearn.metrics.roc_auc_score\",\n",
+        "        \"sklearn.metrics.ConfusionMatrixDisplay\",\n",
+        "        \"sklearn.metrics.precision_recall_curve\",\n",
+        "        \"sklearn.metrics.roc_curve\",\n",
+        "        \"sklearn.metrics.make_scorer\",\n",
+        "        \"sklearn.metrics\",  # new\n",
+        "        \"from sklearn.ensemble.BaggingClassifier\",  # new\n",
+        "        \"RandomForestClassifier\",  # new\n",
+        "        \"sklearn.linear_model.LogisticRegression\",  # new\n",
+        "        \"xgboost.XGBClassifier\", # boosting\n",
+        "        \"xgboost\"\n",
+        "    ]\n",
+        "    uninstalled_list = []\n",
+        "    modules_list_modified = []\n",
+        "    unchecked_formatted_list = []\n",
+        "\n",
+        "    def stringifier(string):\n",
+        "        string = string[3:15]\n",
+        "        return string\n",
+        "\n",
+        "    def sort_output(name):\n",
+        "        string = name  #\n",
+        "        # module\n",
+        "        if string == \"-U scikit-learn\":\n",
+        "            module = stringifier(string)  # string = string[2:15] #\n",
+        "            return module\n",
+        "        # now have holder=scikit-learn\n",
+        "        else:\n",
+        "            module = string\n",
+        "            return string\n",
+        "\n",
+        "    def loop_unformatted_packages(modules_list):\n",
+        "        for name in modules_list:  # '-U scikit-learn'\n",
+        "            unchecked_formatted_list.append(sort_output(name))\n",
+        "        return unchecked_formatted_list\n",
+        "\n",
+        "    unchecked_formatted_list = loop_unformatted_packages(modules_list)\n",
+        "\n",
+        "    def check_not_installed(name):\n",
+        "        \"\"\"\n",
+        "        Check if a package (formatted) is installed or not.\n",
+        "        \"\"\"\n",
+        "        if name in sys.modules:\n",
+        "            print(f\"{name!r} already in sys.modules\")\n",
+        "        elif (spec := importlib.util.find_spec(name)) is not None:\n",
+        "            # If you choose to perform the actual import ..\n",
+        "            module = importlib.util.module_from_spec(spec)\n",
+        "            sys.modules[name] = module\n",
+        "            spec.loader.exec_module(module)\n",
+        "            print(f\"{name!r} has been imported\")\n",
+        "        else:\n",
+        "            print(f\"can't find the {name!r} module\")\n",
+        "            return name\n",
+        "\n",
+        "    def loop_formatted_packages(unchecked_formatted_list, uninstalled_list):\n",
+        "        \"\"\"\n",
+        "        takes:\n",
+        "        - var unchecked_formatted_list\n",
+        "        - var uninstalled_list\n",
+        "        calls:\n",
+        "        - function check_not_installed\n",
+        "        \"\"\"\n",
+        "        for name in unchecked_formatted_list:  # '-U scikit-learn'\n",
+        "            if check_not_installed(name):\n",
+        "                uninstalled_list.append(name)\n",
+        "        return uninstalled_list\n",
+        "\n",
+        "    uninstalled_list = loop_formatted_packages(\n",
+        "        unchecked_formatted_list, uninstalled_list\n",
+        "    )\n",
+        "\n",
+        "    print(\"\\nuninstalled modules are:\", uninstalled_list, \"\\n\")\n",
+        "\n",
+        "    newly_installed = []\n",
+        "\n",
+        "    def installer(uninstalled_list):\n",
+        "        for name in uninstalled_list:\n",
+        "            if name == \"scikit-learn\":\n",
+        "                name2 = \"-U \" + name\n",
+        "            os.system(\"pip install {}\".format(name2))\n",
+        "            print(name, \"module has been installed\")\n",
+        "            newly_installed.append(name)\n",
+        "        print(\"\\n\", newly_installed, \"modules have just been installed\")\n",
+        "\n",
+        "    installer(uninstalled_list)\n"
+      ]
+    },
+    {
+      "attachments": {},
+      "cell_type": "markdown",
+      "id": "8ee66708",
+      "metadata": {},
+      "source": [
+        "leagcy above below cells (2 total)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "a7b09358",
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "# legacy: this will help in making the Python code more structured automatically (help adhere to good coding practices)\n",
+        "%load_ext nb_black\n",
+        "\n",
+        "\n",
+        "import pandas as pd\n",
+        "# import numpy as np\n",
+        "from sklearn import metrics\n",
+        "import matplotlib.pyplot as plt\n",
+        "%matplotlib inline\n",
+        "import warnings\n",
+        "warnings.filterwarnings('ignore')\n",
+        "import seaborn as sns\n",
+        "from sklearn.model_selection import train_test_split\n",
+        "from sklearn.model_selection import GridSearchCV # (To tune different models)\n",
+        "from sklearn import metrics # new\n",
+        "from sklearn.ensemble import BaggingClassifier, RandomForestClassifier # new\n",
+        "from sklearn.linear_model import LogisticRegression # new\n",
+        "\n",
+        "# legacy import:\n",
+        "from statsmodels.tools.sm_exceptions import ConvergenceWarning\n",
+        "\n",
+        "# On:\n",
+        "# # previous:\n",
+        "# # Removes the limit for the number of displayed columns\n",
+        "# pd.set_option(\"display.max_columns\", None)\n",
+        "# # Sets the limit for the number of displayed rows\n",
+        "# pd.set_option(\"display.max_rows\", 200)\n",
+        "# # setting the precision of floating numbers to 5 decimal points\n",
+        "# pd.set_option(\"display.float_format\", lambda x: \"%.5f\" % x)\n",
+        "# # end previous\n",
+        "\n",
+        "# To build model for prediction\n",
+        "import statsmodels.stats.api as sms\n",
+        "\n",
+        "from statsmodels.stats.outliers_influence import variance_inflation_factor\n",
+        "import statsmodels.api as sm\n",
+        "from statsmodels.tools.tools import add_constant\n",
+        "from sklearn.tree import DecisionTreeClassifier\n",
+        "from sklearn import tree\n",
+        "\n",
+        "# To get diferent metric scores\n",
+        "# from previous\n",
+        "# duplicate import from above\n",
+        "from sklearn.metrics import (\n",
+        "    f1_score,\n",
+        "    accuracy_score,\n",
+        "    recall_score,\n",
+        "    precision_score,\n",
+        "    confusion_matrix,\n",
+        "    roc_auc_score,\n",
+        "    ConfusionMatrixDisplay,\n",
+        "    precision_recall_curve,\n",
+        "    roc_curve,\n",
+        "    make_scorer,\n",
+        ")\n",
+        "\n",
+        "%reload_ext nb_black\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "7c24d963",
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "# add matplotlib tutorial\n",
+        "# https://matplotlib.org/stable/tutorials/introductory/pyplot.html\n",
+        "import matplotlib.pyplot as plt\n",
+        "plt.plot([1, 2, 3, 4])\n",
+        "plt.ylabel('some numbers')\n",
+        "plt.show()"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "1d9210f0",
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "plt.plot([1, 2, 3, 4], [1, 4, 9, 16])"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "02db085c",
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "import warnings\n",
+        "warnings.filterwarnings(\"ignore\")\n",
+        "\n",
+        "# import numpy as np   \n",
+        "# import pandas as pd\n",
+        "\n",
+        "# import seaborn as sns\n",
+        "# import matplotlib.pyplot as plt\n",
+        "\n",
+        "from sklearn.tree import DecisionTreeRegressor\n",
+        "# from sklearn.ensemble import BaggingRegressor,RandomForestRegressor, GradientBoostingRegressor, AdaBoostRegressor, StackingRegressor\n",
+        "# from xgboost import XGBRegressor\n",
+        "# from sklearn import metrics\n",
+        "from sklearn.model_selection import GridSearchCV, train_test_split"
+      ]
+    },
+    {
       "cell_type": "markdown",
       "id": "c1cd4628",
       "metadata": {
@@ -105,24 +361,7 @@
       "outputs": [
         {
           "data": {
-            "application/javascript": [
-              "\n",
-              "            setTimeout(function() {\n",
-              "                var nbb_cell_id = 1;\n",
-              "                var nbb_unformatted_code = \"# this will help in making the Python code more structured automatically (good coding practice)\\n%load_ext nb_black\\n\\nimport warnings\\n\\nwarnings.filterwarnings(\\\"ignore\\\")\\n\\n# Libraries to help with reading and manipulating data\\nimport numpy as np\\nimport pandas as pd\\n\\n# Library to split data\\nfrom sklearn.model_selection import train_test_split\\n\\n# libaries to help with data visualization\\nimport matplotlib.pyplot as plt\\nimport seaborn as sns\\n\\n# Removes the limit for the number of displayed columns\\npd.set_option(\\\"display.max_columns\\\", None)\\n# Sets the limit for the number of displayed rows\\npd.set_option(\\\"display.max_rows\\\", 100)\\n\\n\\n# Libraries different ensemble classifiers\\nfrom sklearn.ensemble import (\\n    BaggingClassifier,\\n    RandomForestClassifier,\\n    AdaBoostClassifier,\\n    GradientBoostingClassifier,\\n    StackingClassifier,\\n)\\n\\nfrom xgboost import XGBClassifier\\nfrom sklearn.tree import DecisionTreeClassifier\\n\\n# Libraries to get different metric scores\\nfrom sklearn import metrics\\nfrom sklearn.metrics import (\\n    confusion_matrix,\\n    accuracy_score,\\n    precision_score,\\n    recall_score,\\n    f1_score,\\n)\\n\\n# To tune different models\\nfrom sklearn.model_selection import GridSearchCV\";\n",
-              "                var nbb_formatted_code = \"# this will help in making the Python code more structured automatically (good coding practice)\\n%load_ext nb_black\\n\\nimport warnings\\n\\nwarnings.filterwarnings(\\\"ignore\\\")\\n\\n# Libraries to help with reading and manipulating data\\nimport numpy as np\\nimport pandas as pd\\n\\n# Library to split data\\nfrom sklearn.model_selection import train_test_split\\n\\n# libaries to help with data visualization\\nimport matplotlib.pyplot as plt\\nimport seaborn as sns\\n\\n# Removes the limit for the number of displayed columns\\npd.set_option(\\\"display.max_columns\\\", None)\\n# Sets the limit for the number of displayed rows\\npd.set_option(\\\"display.max_rows\\\", 100)\\n\\n\\n# Libraries different ensemble classifiers\\nfrom sklearn.ensemble import (\\n    BaggingClassifier,\\n    RandomForestClassifier,\\n    AdaBoostClassifier,\\n    GradientBoostingClassifier,\\n    StackingClassifier,\\n)\\n\\nfrom xgboost import XGBClassifier\\nfrom sklearn.tree import DecisionTreeClassifier\\n\\n# Libraries to get different metric scores\\nfrom sklearn import metrics\\nfrom sklearn.metrics import (\\n    confusion_matrix,\\n    accuracy_score,\\n    precision_score,\\n    recall_score,\\n    f1_score,\\n)\\n\\n# To tune different models\\nfrom sklearn.model_selection import GridSearchCV\";\n",
-              "                var nbb_cells = Jupyter.notebook.get_cells();\n",
-              "                for (var i = 0; i < nbb_cells.length; ++i) {\n",
-              "                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {\n",
-              "                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {\n",
-              "                             nbb_cells[i].set_text(nbb_formatted_code);\n",
-              "                        }\n",
-              "                        break;\n",
-              "                    }\n",
-              "                }\n",
-              "            }, 500);\n",
-              "            "
-            ],
+            "application/javascript": "\n            setTimeout(function() {\n                var nbb_cell_id = 1;\n                var nbb_unformatted_code = \"# this will help in making the Python code more structured automatically (good coding practice)\\n%load_ext nb_black\\n\\nimport warnings\\n\\nwarnings.filterwarnings(\\\"ignore\\\")\\n\\n# Libraries to help with reading and manipulating data\\nimport numpy as np\\nimport pandas as pd\\n\\n# Library to split data\\nfrom sklearn.model_selection import train_test_split\\n\\n# libaries to help with data visualization\\nimport matplotlib.pyplot as plt\\nimport seaborn as sns\\n\\n# Removes the limit for the number of displayed columns\\npd.set_option(\\\"display.max_columns\\\", None)\\n# Sets the limit for the number of displayed rows\\npd.set_option(\\\"display.max_rows\\\", 100)\\n\\n\\n# Libraries different ensemble classifiers\\nfrom sklearn.ensemble import (\\n    BaggingClassifier,\\n    RandomForestClassifier,\\n    AdaBoostClassifier,\\n    GradientBoostingClassifier,\\n    StackingClassifier,\\n)\\n\\nfrom xgboost import XGBClassifier\\nfrom sklearn.tree import DecisionTreeClassifier\\n\\n# Libraries to get different metric scores\\nfrom sklearn import metrics\\nfrom sklearn.metrics import (\\n    confusion_matrix,\\n    accuracy_score,\\n    precision_score,\\n    recall_score,\\n    f1_score,\\n)\\n\\n# To tune different models\\nfrom sklearn.model_selection import GridSearchCV\";\n                var nbb_formatted_code = \"# this will help in making the Python code more structured automatically (good coding practice)\\n%load_ext nb_black\\n\\nimport warnings\\n\\nwarnings.filterwarnings(\\\"ignore\\\")\\n\\n# Libraries to help with reading and manipulating data\\nimport numpy as np\\nimport pandas as pd\\n\\n# Library to split data\\nfrom sklearn.model_selection import train_test_split\\n\\n# libaries to help with data visualization\\nimport matplotlib.pyplot as plt\\nimport seaborn as sns\\n\\n# Removes the limit for the number of displayed columns\\npd.set_option(\\\"display.max_columns\\\", None)\\n# Sets the limit for the number of displayed rows\\npd.set_option(\\\"display.max_rows\\\", 100)\\n\\n\\n# Libraries different ensemble classifiers\\nfrom sklearn.ensemble import (\\n    BaggingClassifier,\\n    RandomForestClassifier,\\n    AdaBoostClassifier,\\n    GradientBoostingClassifier,\\n    StackingClassifier,\\n)\\n\\nfrom xgboost import XGBClassifier\\nfrom sklearn.tree import DecisionTreeClassifier\\n\\n# Libraries to get different metric scores\\nfrom sklearn import metrics\\nfrom sklearn.metrics import (\\n    confusion_matrix,\\n    accuracy_score,\\n    precision_score,\\n    recall_score,\\n    f1_score,\\n)\\n\\n# To tune different models\\nfrom sklearn.model_selection import GridSearchCV\";\n                var nbb_cells = Jupyter.notebook.get_cells();\n                for (var i = 0; i < nbb_cells.length; ++i) {\n                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {\n                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {\n                             nbb_cells[i].set_text(nbb_formatted_code);\n                        }\n                        break;\n                    }\n                }\n            }, 500);\n            ",
             "text/plain": [
               "<IPython.core.display.Javascript object>"
             ]
@@ -219,13 +458,13 @@
     },
     {
       "cell_type": "markdown",
-      "source": [
-        "## Overview of the Dataset"
-      ],
+      "id": "6vlJXoQkgcGI",
       "metadata": {
         "id": "6vlJXoQkgcGI"
       },
-      "id": "6vlJXoQkgcGI"
+      "source": [
+        "## Overview of the Dataset"
+      ]
     },
     {
       "cell_type": "markdown",
@@ -1113,13 +1352,13 @@
     },
     {
       "cell_type": "markdown",
-      "source": [
-        "## Data Preprocessing"
-      ],
+      "id": "icaAgO2siAcs",
       "metadata": {
         "id": "icaAgO2siAcs"
       },
-      "id": "icaAgO2siAcs"
+      "source": [
+        "## Data Preprocessing"
+      ]
     },
     {
       "cell_type": "markdown",
@@ -1207,13 +1446,13 @@
     },
     {
       "cell_type": "markdown",
-      "source": [
-        "## Model evaluation criterion"
-      ],
+      "id": "teKIRZIDdzpK",
       "metadata": {
         "id": "teKIRZIDdzpK"
       },
-      "id": "teKIRZIDdzpK"
+      "source": [
+        "## Model evaluation criterion"
+      ]
     },
     {
       "cell_type": "markdown",
@@ -1326,13 +1565,13 @@
     },
     {
       "cell_type": "markdown",
-      "source": [
-        "## Decision Tree - Model Building and Hyperparameter Tuning"
-      ],
+      "id": "ICezcLI4iL0a",
       "metadata": {
         "id": "ICezcLI4iL0a"
       },
-      "id": "ICezcLI4iL0a"
+      "source": [
+        "## Decision Tree - Model Building and Hyperparameter Tuning"
+      ]
     },
     {
       "cell_type": "markdown",
@@ -1524,13 +1763,13 @@
     },
     {
       "cell_type": "markdown",
-      "source": [
-        "## Bagging - Model Building and Hyperparameter Tuning"
-      ],
+      "id": "FnQnoNOCiSwl",
       "metadata": {
         "id": "FnQnoNOCiSwl"
       },
-      "id": "FnQnoNOCiSwl"
+      "source": [
+        "## Bagging - Model Building and Hyperparameter Tuning"
+      ]
     },
     {
       "cell_type": "markdown",
@@ -1948,13 +2187,13 @@
     },
     {
       "cell_type": "markdown",
-      "source": [
-        "## Boosting - Model Building and Hyperparameter Tuning"
-      ],
+      "id": "p33jg7JVid1H",
       "metadata": {
         "id": "p33jg7JVid1H"
       },
-      "id": "p33jg7JVid1H"
+      "source": [
+        "## Boosting - Model Building and Hyperparameter Tuning"
+      ]
     },
     {
       "cell_type": "markdown",
@@ -2812,29 +3051,27 @@
     },
     {
       "cell_type": "markdown",
-      "source": [
-        "- \n"
-      ],
+      "id": "Am_0CWgMeXxY",
       "metadata": {
         "id": "Am_0CWgMeXxY"
       },
-      "id": "Am_0CWgMeXxY"
+      "source": [
+        "- \n"
+      ]
     },
     {
       "cell_type": "markdown",
-      "source": [
-        "___"
-      ],
+      "id": "4kJHJ56seYnH",
       "metadata": {
         "id": "4kJHJ56seYnH"
       },
-      "id": "4kJHJ56seYnH"
+      "source": [
+        "___"
+      ]
     }
   ],
   "metadata": {
     "colab": {
-      "name": "DSBA_Project_EasyVisa_LowCode.ipynb",
-      "provenance": [],
       "collapsed_sections": [
         "2xUfZBo9JM9e",
         "c1cd4628",
@@ -2916,7 +3153,9 @@
         "mechanical-clarity",
         "stone-venezuela",
         "congressional-knock"
-      ]
+      ],
+      "name": "DSBA_Project_EasyVisa_LowCode.ipynb",
+      "provenance": []
     },
     "kernelspec": {
       "display_name": "Python 3",
@@ -2933,7 +3172,7 @@
       "name": "python",
       "nbconvert_exporter": "python",
       "pygments_lexer": "ipython3",
-      "version": "3.8.8"
+      "version": "3.10.10"
     }
   },
   "nbformat": 4,

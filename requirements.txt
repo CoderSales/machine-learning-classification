@@ -60,7 +60,7 @@ packaging==23.0
 pandas==1.5.3
 pandocfilters==1.5.0
 parso==0.8.3
-pathspec==0.11.0
+pathspec==1.1.1
 patsy==0.5.3
 pickleshare==0.7.5
 Pillow==12.2.0

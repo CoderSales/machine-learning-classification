@@ -81,7 +81,7 @@ pywinpty==2.0.10
 PyYAML==6.0
 pyzmq==25.0.0
 qtconsole==5.4.0
-QtPy==2.3.0
+QtPy==2.4.3
 rfc3339-validator==0.1.4
 rfc3986-validator==0.1.1
 scikit-learn==1.5.0

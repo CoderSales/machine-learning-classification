@@ -63,7 +63,7 @@ parso==0.8.7
 pathspec==1.1.1
 patsy==0.5.3
 pickleshare==0.7.5
-Pillow==12.2.0
+Pillow==12.3.0
 platformdirs==2.6.2
 prometheus-client==0.16.0
 prompt-toolkit==3.0.52

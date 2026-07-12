@@ -31,7 +31,7 @@ jedi==0.18.2
 Jinja2==3.1.6
 joblib==1.5.3
 jsonpointer==2.3
-jsonschema==4.17.3
+jsonschema==4.26.0
 jupyter==1.0.0
 jupyter-console==6.4.4
 jupyter-events==0.12.1

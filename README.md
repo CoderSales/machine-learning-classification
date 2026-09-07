@@ -1,5 +1,10 @@
 # machine-learning-classification
 
+## Current Mac setup
+
+Use Python **3.12** and follow [QUICKSTART-MAC.md](QUICKSTART-MAC.md).
+`requirements.txt` is generated from `requirements.in`; the notes below are historical.
+
 # primary source for this README: jupyter-6-Supervised-Learning
 Repository for running jupyter notebooks and keeping relevant files in one place
 

@@ -1,0 +1,14 @@
+# Scientific and notebook dependencies for Python 3.12.
+# Regenerate requirements.txt using the command in QUICKSTART-MAC.md.
+jupyter==1.1.1
+notebook>=7.6.2,<8
+ipykernel==7.3.0
+nbconvert==7.17.1
+matplotlib==3.10.9
+mistune==3.3.3
+numpy==2.5.1
+pandas>=2.2,<3
+scikit-learn==1.5.0
+scipy>=1.14,<2
+seaborn>=0.13,<0.14
+statsmodels==0.14.6

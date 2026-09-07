@@ -5,6 +5,9 @@
 Use Python **3.12** and follow [QUICKSTART-MAC.md](QUICKSTART-MAC.md).
 `requirements.txt` is generated from `requirements.in`; the notes below are historical.
 
+Setup and dependency maintenance were completed with assistance from
+[ChatGPT](https://chatgpt.com/) and [OpenAI Codex](https://openai.com/codex/).
+
 # primary source for this README: jupyter-6-Supervised-Learning
 Repository for running jupyter notebooks and keeping relevant files in one place
 

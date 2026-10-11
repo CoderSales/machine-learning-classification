@@ -48,7 +48,7 @@ jupyter-events==0.12.1
 jupyter-lsp==2.3.1
 jupyter-server==2.21.0
 jupyter-server-terminals==0.5.4
-jupyterlab==4.6.3
+jupyterlab==4.6.4
 jupyterlab-pygments==0.3.0
 jupyterlab-server==2.28.0
 jupyterlab-widgets==3.0.17
@@ -62,7 +62,7 @@ nbclient==0.11.0
 nbconvert==7.17.1
 nbformat==5.11.1
 nest-asyncio2==1.7.2
-notebook==7.6.2
+notebook==7.6.3
 notebook-shim==0.2.4
 numpy==2.5.1
 packaging==26.3

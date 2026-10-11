@@ -8,7 +8,7 @@ matplotlib==3.10.9
 mistune==3.3.3
 numpy==2.5.1
 pandas>=2.2,<3
-scikit-learn==1.5.0
+scikit-learn==1.9.1
 scipy>=1.14,<2
 seaborn>=0.13,<0.14
 statsmodels==0.14.6

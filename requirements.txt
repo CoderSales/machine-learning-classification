@@ -67,7 +67,7 @@ notebook==7.6.3
 notebook-shim==0.2.4
 numpy==2.5.1
 packaging==26.3
-pandas==2.3.3
+pandas==3.0.6
 pandocfilters==1.5.1
 parso==0.8.7
 patsy==1.0.3
@@ -84,7 +84,6 @@ pygments==2.21.0
 pyparsing==3.3.2
 python-dateutil==2.9.0.post0
 python-json-logger==4.2.0
-pytz==2026.3.post1
 pyyaml==6.0.3
 pyzmq==27.2.0
 referencing==0.37.0
